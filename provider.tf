@@ -34,3 +34,8 @@ provider "aws" {
     sts            = "http://localhost:4566"
   }
 }
+
+provider "github" {
+   token = var.github_token
+   owner = var.github_owner
+}
