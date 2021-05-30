@@ -3,11 +3,14 @@ locals {
 }
 
 resource "aws_instance" "web" {
-  ami           = "AMI-test"
+
+  for_each = toset(["1", "2", "3"])
+  ami           = "AMI-${each.key}"
   instance_type = "t2.nano"
 
   tags = {
     Name = var.aws_instance_name
+    Index = each.key
   }
 }
 

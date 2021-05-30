@@ -1,3 +1,3 @@
-output "aws_instance_id" {
-  value = aws_instance.web.id
+output "aws_instance_ids" {
+  value = aws_instance.web["1"].id
 }
